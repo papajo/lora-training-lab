@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# LoRA & Training Pipeline Lab
 
-# Run and deploy your AI Studio app
+**An interactive, visual teaching lab for the moving parts of LLM fine-tuning: LoRA, gradient clipping, mixed precision, learning-rate schedules and validation splits.**
 
-This contains everything you need to run your app locally.
+This is a learning tool, not a training pipeline. Every view is a **simulation** you can tweak in the browser to see how each technique behaves, before you spend GPU hours on a real fine-tuning run.
 
-View your app in AI Studio: https://ai.studio/apps/db3e8da6-29c3-4756-9829-5c46e0bd2408
+### What's inside
+- **LoRA trace:** how low-rank adapters are added to frozen weights, and what rank/alpha change
+- **Gradient clipping:** exploding gradients with and without clipping
+- **Mixed precision:** what fp16/bf16 save, and where loss scaling matters
+- **LR schedulers:** cosine and warm-up schedules visualized over training steps
+- **Dataset split:** train/validation split and why held-out data catches overfitting
+- **Pipeline debugger:** common training failures and how to spot them
+- **Production architecture:** how these pieces fit together in a real fine-tuning workflow
+- **Inference playground:** Gemini-backed Q&A about the concepts
+- **Lab guide and bootcamp:** step-by-step exercises
 
-## Run Locally
+### Tech stack
+TypeScript · React 19 · Vite · Tailwind CSS · Google Gemini (`@google/genai`)
 
-**Prerequisites:**  Node.js
+### Run it locally
+```bash
+npm install
+cp .env.example .env.local   # set GEMINI_API_KEY (used by the inference playground)
+npm run dev                  # http://localhost:3000
+```
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Status
+A teaching prototype, started from Google AI Studio tooling. It does not train or fine-tune models.
