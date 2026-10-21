@@ -12,16 +12,15 @@ This is a learning tool, not a training pipeline. Every view is a **simulation**
 - **Dataset split:** train/validation split and why held-out data catches overfitting
 - **Pipeline debugger:** common training failures and how to spot them
 - **Production architecture:** how these pieces fit together in a real fine-tuning workflow
-- **Inference playground:** Gemini-backed Q&A about the concepts
+- **Inference playground:** a simulated comparison of base vs. adapted model outputs
 - **Lab guide and bootcamp:** step-by-step exercises
 
 ### Tech stack
-TypeScript · React 19 · Vite · Tailwind CSS · Google Gemini (`@google/genai`)
+TypeScript · React 19 · Vite · Tailwind CSS (runs entirely in the browser, with no model calls)
 
 ### Run it locally
 ```bash
 npm install
-cp .env.example .env.local   # set GEMINI_API_KEY (used by the inference playground)
 npm run dev                  # http://localhost:3000
 ```
 
